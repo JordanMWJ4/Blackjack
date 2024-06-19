@@ -14,7 +14,7 @@ function Blackjack() {
   useEffect(() => { 
     // Effect to start the game when gameStarted state changes 
     if (gameStarted) {  startGame();
-     } [gameStarted] })} 
+     } }, [gameStarted]); 
 
     const startGame = async () => {
     const response = await fetch(deckUrl);
@@ -97,7 +97,7 @@ if (newDealerTotal > 21) { 
   }
     
   setGameOver(true); }; 
-
+  
   const calculateTotalValue = (cards) => { 
     // Function to calculate total value of cards 
   let total = cards.reduce((acc, card) => { 
